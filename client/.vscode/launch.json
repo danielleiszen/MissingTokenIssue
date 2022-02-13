@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "pmclient",
+            "name": "tokenclient",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "pmclient (profile mode)",
+            "name": "tokenclient (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"

@@ -2,6 +2,7 @@ using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using OpenIddict.Validation.AspNetCore;
 using PMClient;
+using System.Diagnostics;
 
 namespace PMClient.Services
 {
@@ -16,6 +17,11 @@ namespace PMClient.Services
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            foreach(var item in context.RequestHeaders)
+            {
+                Debug.WriteLine($"{item.Key} {item.Value}");  
+            }
+
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name
